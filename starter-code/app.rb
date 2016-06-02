@@ -24,6 +24,7 @@ class Tunr < Sinatra::Base
 
   # create
   post '/artists' do
+    p params
     @artist = Artist.new(params[:artist])
     if @artist.save
       redirect("/artists/#{@artist.id}")
